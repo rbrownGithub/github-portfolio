@@ -539,12 +539,17 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    justify-content: center; /* Add this line to center horizontally */
+    margin: 0 auto; /* Centers the section within the page */
+    max-width: 1200px; /* Optional: Limit the width of the section */
+    padding: 20px;
 }
 
-@media(max-width: 900px) {
+@media (max-width: 900px) {
     .about__content {
         flex-direction: column-reverse;
-        align-items: initial;
+        align-items: center; /* Center align items for mobile */
+        justify-content: center; /* Center horizontally for mobile */
     }
 }
 
@@ -552,14 +557,26 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: var(--gutter-normal);
 }
 
-@media(min-width: 901px) {
+@media (min-width: 901px) {
     .about__text {
-        flex: 0 0 35%;
+        text-align: center;     /* Keep the text centered */
+        max-width: 600px;       /* Set a maximum width for the text container */
+        margin: 0 auto;         /* Center the text container within its parent */
+        line-height: 1.6;       /* Improve line spacing */
+        padding: 10px;          /* Optional: Add some padding for better spacing */
     }
     
+
     .about__photo-container {
         flex: 1;
         margin: 0 var(--gutter-huge) 0 0;
+    }
+
+    /* Mobile adjustments */
+@media (max-width: 600px) {
+    .about__text {
+        max-width: 90%;     /* Allow more width on smaller screens */
+        padding: 10px;
     }
 }
 
@@ -610,4 +627,6 @@ body:not(.user-is-tabbing) a:focus {
     .footer {
         padding: var(--gutter-medium) 0;
     } 
+}
+
 }
