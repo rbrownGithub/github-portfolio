@@ -405,7 +405,7 @@ body:not(.user-is-tabbing) a:focus {
 
 .header {
     background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
-        url('./images/header.jpg');
+        url('./images/laptop.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -589,44 +589,104 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 /* --------------------------------------- */
-/* ----- Footer ----- */
+/* ----- Social Links (Moved from Footer) ----- */
 /* --------------------------------------- */
-
-.footer {
-    text-align: center;
-    padding: var(--gutter-medium) 0 var(--gutter-normal);
-}
 
 .footer__social-links {
     display: flex;
     justify-content: center;
-    padding: var(--gutter-normal) 0;
+    margin-top: 2rem; /* Add spacing from other content */
     list-style: none;
 }
 
 .footer__social-link-item:not(:last-of-type) {
-    margin-right: var(--gutter-small);
+    margin-right: 1.5rem; /* Adjust spacing between icons */
 }
 
 .footer__social-image {
     height: 4rem;
 }
 
-.footer__github-buttons {
+@media (max-width: 768px) {
+    .footer__social-image {
+        height: 3rem; /* Adjust size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__social-image {
+        height: 2.5rem; /* Adjust size for smaller mobile screens */
+    }
+}
+
+section {
+    padding: var(--gutter-huge) 0;
+    border-bottom: 2px solid #ff3258; /* Red color divider similar to the pink lines */
+}
+
+/* --------------------------------------- */
+/* ----- About Me Section Adjustments ----- */
+/* --------------------------------------- */
+
+.about__content {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-.footer__github-buttons iframe {
-    height: 2.5rem;
-    width: 84px;
-    transform: translateY(3px);
+.about__text {
+    flex: 0 0 70%;
+    padding-left: 4rem;
 }
 
-@media(max-width: 500px) {
-    .footer {
-        padding: var(--gutter-medium) 0;
-    } 
+.about__photo-container {
+    flex: 0 0 30%;
+    margin-right: 2rem;
 }
 
+@media (max-width: 900px) {
+    .about__content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about__text {
+        padding-left: 0;
+    }
+    .about__photo-container {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+/* --------------------------------------- */
+/* ----- Navigation Buttons Adjustments ----- */
+/* --------------------------------------- */
+
+.nav__link-button {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--pink);
+    font-weight: 400;
+    transition: all 0.2s;
+    margin: 0 1rem;
+}
+
+.nav__link-button:hover,
+.nav__link-button:focus {
+    background: transparent;
+    color: var(--pink);
+}
+
+/* --------------------------------------- */
+/* ----- Navigation Alignment Adjustments ----- */
+/* --------------------------------------- */
+
+.nav {
+    display: flex;
+    justify-content: flex-start; /* Align navigation links to the left */
+    padding: var(--gutter-normal) 0;
+}
 }
